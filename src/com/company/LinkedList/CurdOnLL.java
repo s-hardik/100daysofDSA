@@ -9,12 +9,14 @@ public class CurdOnLL {
         int target = 0;
         while(true) {
             int n = scan.nextInt();
-            int x = scan.nextInt();
+            int x = 0;
             switch (n) {
                 case 1:
+                    x = scan.nextInt();
                     ll = InsertingIntoLL.insertAtBegining(ll, x);
                     break;
                 case 2:
+                    x = scan.nextInt();
                     ll = InsertingIntoLL.insertAtEnd(ll, x);
                     break;
                 case 3:
@@ -24,12 +26,16 @@ public class CurdOnLL {
                 case 4:
                     ll = DeleteFromLL.deleteAtBegining(ll);
                     break;
-                case 6:
+                case 5:
                     ll = DeleteFromLL.deleteAtEnd(ll);
+                    break;
+                case 6:
+                    target = scan.nextInt();
+                    ll = DeleteFromLL.deleteAtMiddle(ll, target);
                     break;
                 case 7:
                     target = scan.nextInt();
-                    ll = DeleteFromLL.deleteAtMiddle(ll, target);
+                    System.out.println(SearchAnElement.search(ll,target));
                     break;
             }
             Display.display(ll);
